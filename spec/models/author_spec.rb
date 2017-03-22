@@ -12,5 +12,14 @@
 require 'rails_helper'
 
 RSpec.describe Author, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @author = Author.new(name: "Derek", hometown: "Maine")
+  end
+  it "has a name" do
+    expect(@author.name).to eq("Derek")
+  end
+
+  it "has a hometown" do
+    expect(@author.hometown).to eq("Maine")
+  end
 end
